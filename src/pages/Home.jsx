@@ -26,7 +26,17 @@ const Home = () => {
   const canvasHideRef = useRef(null);
   const targetRef = useRef(null);
   const canvasTempRef = useRef(null);
-  var canvasBounding = JSON.parse(localStorage.getItem('canvasBounding')) ;
+  const defaultCanvasBounding = { width: 205, height: 341 };
+  const getDefaultLines = () => ([
+    { x1: 68, y1: 0, x2: 68, y2: 340 }, // 横1
+    { x1: 137, y1: 0, x2: 137, y2: 340 }, // 横2
+    { x1: 0, y1: 68, x2: 205, y2: 68 }, // 竖1
+    { x1: 0, y1: 137, x2: 205, y2: 137 }, // 竖2
+    { x1: 0, y1: 204, x2: 205, y2: 204 }, // 竖3
+    { x1: 0, y1: 272, x2: 205, y2: 272 }, // 竖4
+  ]);
+
+  var canvasBounding = JSON.parse(localStorage.getItem('canvasBounding')) || defaultCanvasBounding;
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [fontLoading, setFontLoading] = useState(false);
@@ -76,9 +86,9 @@ const Home = () => {
     green: [0, 128, 0],
   };
 
-  var offsetX = JSON.parse(localStorage.getItem('offsetX'));
-  var offsetY = JSON.parse(localStorage.getItem('offsetY'));
-  var lines= JSON.parse(localStorage.getItem('lines'))
+  var offsetX = JSON.parse(localStorage.getItem('offsetX')) || 0;
+  var offsetY = JSON.parse(localStorage.getItem('offsetY')) || 0;
+  var lines = JSON.parse(localStorage.getItem('lines')) || getDefaultLines();
 
   var canvasOffsetX = 0
   var canvasOffsetY = 0
@@ -190,24 +200,10 @@ const Home = () => {
     " ": [[0, 0], [0], [0, 0, 0, 0], [0], [0, 0], [0], [0, 0, 0, 0, 0], [0], [0, 0, 0, 0, 0], [0], [0, 0], [0], [0, 0, 0, 0], [0], [0, 0]],
   }
   useEffect(() => {
-    localStorage.setItem('canvasBounding', JSON.stringify({ width: 205, height: 341 }));
-    localStorage.setItem('lines', JSON.stringify([
-      { x1: 68, y1: 0, x2: 68, y2: 340 }, // 横1
-      { x1: 137, y1: 0, x2: 137, y2: 340 }, // 横2
-      { x1: 0, y1: 68, x2: 205, y2: 68 }, // 竖1
-      { x1: 0, y1: 137, x2: 205, y2: 137 }, // 竖2
-      { x1: 0, y1: 204, x2: 205, y2: 204 }, // 竖3
-      { x1: 0, y1: 272, x2: 205, y2: 272 }, // 竖4
-    ]));
-    canvasBounding = { width: 205, height: 341 } 
-    lines = [
-      { x1: 68, y1: 0, x2: 68, y2: 340 }, // 横1
-      { x1: 137, y1: 0, x2: 137, y2: 340 }, // 横2
-      { x1: 0, y1: 68, x2: 205, y2: 68 }, // 竖1
-      { x1: 0, y1: 137, x2: 205, y2: 137 }, // 竖2
-      { x1: 0, y1: 204, x2: 205, y2: 204 }, // 竖3
-      { x1: 0, y1: 272, x2: 205, y2: 272 }, // 竖4
-    ]
+    localStorage.setItem('canvasBounding', JSON.stringify(defaultCanvasBounding));
+    localStorage.setItem('lines', JSON.stringify(getDefaultLines()));
+    canvasBounding = defaultCanvasBounding;
+    lines = getDefaultLines();
     // localStorage.setItem('offsetX', (canvas.width / 2 - canvasBounding.width / 2));
     // localStorage.setItem('offsetY', (canvas.height / 2 - canvasBounding.height / 2));
 

@@ -1,0 +1,344 @@
+.my_slider{
+
+}
+
+body{
+  background-color: #fdfdfd;
+}
+
+.flex-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.hide-canvas-block{
+  border: 1px solid #000;
+  width: 400px;
+}
+
+.page-wrapper {
+  display: flex;
+  margin: 0 auto;
+  // width: 1512px;
+  // border: 1px solid #ddd;
+  background-color: #fdfdfd;
+}
+
+.left-block {
+
+  position: fixed;
+  top: 514px;
+  left: 0;
+  transform: translateY(-50%);
+  width: 200px;
+ 
+
+
+  width: 401px;
+  // height: 930px;
+  margin-top: 30px;
+  margin-left: 33px;
+  // border: 1px solid #ddd;
+  margin-bottom: 30px;
+
+  .draw-title {
+    display: flex;
+    width:399px;
+    height: 54px;
+    padding: 5px 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px 6px 0px 0px;
+    border: 1px solid #000;
+    background: #000;
+    color: #FFF;
+    text-align: center;
+    font-family: Space Mono;
+    font-size: 17.805px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    /* 19.585px */
+  }
+
+  #canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 474px;
+     
+    border-radius: 0px 0px 6px 6px;
+    border: 1px solid #000;
+
+    #myCanvas{
+      
+      // border: #000 1px solid;
+    }
+  }
+
+  #operation {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .grid-switch-block,
+    .page-switch-block {
+      display: flex;
+      flex-direction: row;
+      width: 398px;
+      margin-top: 15px;
+
+      div {
+        display: flex;
+        width: 50%;
+        height: 31px;
+        padding: 5px 0px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 6px;
+        border: 1px solid #000;
+        background: #FFF;
+        color: #000;
+        text-align: center;
+        font-family: Space Mono;
+        font-size: 17.805px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%; /* 19.585px */
+        cursor: pointer;
+      }
+
+      div.active {
+        border-radius: 6px;
+        border: 1px solid #000;
+        background: #000;
+        color: #FFF;
+        text-align: center;
+        font-family: Space Mono;
+        font-size: 17.805px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        cursor: pointer;
+        /* 19.585px */
+      }
+    }
+
+    .switch-block {
+      display: flex;
+      width: 100%;
+      justify-content: start;
+      align-items: start;
+      gap: 34px;
+      margin-top: 12px;
+
+      span {
+        display: flex;
+        color: #000;
+        font-family: Space Mono;
+        font-size: 17.805px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        /* 19.585px */
+        width: 120px;
+      }
+
+      .font-size-slider {
+        width: 268px;
+        height: 1px;
+      }
+    }
+
+    .other-block {
+      display: flex;
+      width: 100%;
+      margin-top: 15px;
+      justify-content: space-between;
+
+      .color-list {
+        display: flex;
+      }
+
+      .color-list div {
+        width: 30px;
+        height: 30px;
+        margin-right: 7px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .align-list {
+        display: flex;
+        margin-left: 15px;
+      }
+
+      .align-list div {
+        width: 30px;
+        height: 30px;
+        margin-right: 7px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .middle-list {
+        display: flex;
+        cursor: pointer;
+
+      }
+
+    }
+
+    .download-block {
+      display: flex;
+      width: 401px;
+      height: 45px;
+      padding: 5px 0px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 6px;
+      border: 1px solid #000;
+      background: #FFF;
+      color: #000;
+      text-align: center;
+      font-family: Space Mono;
+      font-size: 17.805px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .archive-block {
+      display: flex;
+      width: 401px;
+      height: 45px;
+      padding: 5px 0px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 6px;
+      border: 1px solid #000;
+      background: #FFF;
+      color: #000;
+      text-align: center;
+      font-family: Space Mono;
+      font-size: 17.805px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 110%;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+  }
+
+}
+
+.right-block {
+  margin-top: 30px;
+
+  display: flex;
+  // width: 1021px;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  // border: 1px solid #ddd;
+  // margin-left: 35px;
+
+  padding-left: 408px;
+
+  #letter_block{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #number_block{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #symbol_block{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #about_block{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #author_block{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+  }
+}
+
+.canvas-container{
+  margin-left: 20px;
+}
+
+.Archive-wrapper{
+  display: flex;
+  flex-direction: row;
+
+  .Archive-block{
+    display: flex;
+  }
+
+  .right-font-list{
+    display: flex;
+    flex-direction: column;
+  
+  }
+}
+
+.right-Font-block{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 40px;
+  margin-bottom: 50px;
+  div{
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    // width: 80px;
+    height: 140px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.hr-block{
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.btn-font-download{
+  display: flex;
+  width: 246px;
+  height: 31px;
+  padding: 5px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  border: 1px solid #000;
+  background: #FFF;
+  color: black;
+}

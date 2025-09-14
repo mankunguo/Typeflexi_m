@@ -67,3 +67,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Ensure dark mode has a dark page background even if component CSS sets light */
+@media (prefers-color-scheme: dark) {
+  body { background-color: #242424 !important; }
+}

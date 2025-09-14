@@ -2,8 +2,12 @@
 
 }
 
-body{
-  background-color: #fdfdfd;
+/* Respect system theme to avoid white-on-white text when OS is dark */
+@media (prefers-color-scheme: light) {
+  body { background-color: #fdfdfd; }
+}
+@media (prefers-color-scheme: dark) {
+  body { background-color: #242424; }
 }
 
 .flex-wrapper{
